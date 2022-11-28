@@ -1,0 +1,31 @@
+﻿@model ClientModel
+
+<br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>NOME</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+        @foreach (var item in (List<ClientModel>)ViewBag.ClientList)
+        {
+            <tr>
+                <td>@item.Id.ToString()</td>
+                <td>@item.Nome.ToString()</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<button class="btn btn-block btn-primary" onclick = "registrar()">Registrar Cliente</button> 
+
+<script>
+    function registrar() {
+        window.location.href = window.location.origin +"/Home/Registrar"
+    }
+</script>
